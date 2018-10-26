@@ -72,3 +72,15 @@ hi
 
 
 * Working steps , let me know if you are facing issue here. 
+
+Issue ->
+1. [2018-10-26 14:23:26,684] WARN [Consumer clientId=consumer-1, groupId=console-consumer-62860] Error while fetching metadata with correlation id 2 : {channel3=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient) in mac
+
+Fix - 
+➜  ~ cd /usr/local/etc/kafka
+➜  kafka cat server.properties
+
+add below line,sometime listener unable to reach -
+listeners=PLAINTEXT://localhost:9092
+ 
+Restart both kafka and zookeper and use new terminal
